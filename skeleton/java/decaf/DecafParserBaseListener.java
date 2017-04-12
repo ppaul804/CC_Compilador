@@ -1,4 +1,4 @@
-// Generated from /home/uniceub/igortullio/CC_Compilador/src/decaf/DecafParser.g4 by ANTLR 4.5.3
+// Generated from /home/uniceub/igortullio/CC_Compilador/skeleton/src/decaf/DecafParser.g4 by ANTLR 4.5.3
 
 package decaf;
 

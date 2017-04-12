@@ -1,4 +1,4 @@
-// Generated from /home/uniceub/igortullio/CC_Compilador/src/decaf/DecafParser.g4 by ANTLR 4.5.3
+// Generated from /home/uniceub/igortullio/CC_Compilador/skeleton/src/decaf/DecafParser.g4 by ANTLR 4.5.3
 
 package decaf;
 
@@ -19,7 +19,9 @@ public class DecafParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		TK_class=1, LCURLY=2, RCURLY=3, ID=4, WS_=5, SL_COMMENT=6, CHAR=7, STRING=8;
+		TK_class=1, ABRE_CHAVE=2, FECHA_CHAVE=3, ID=4, ID_LETRA=5, DIGITO=6, INT=7, 
+		FLOAT=8, HEXA=9, WS_=10, COMENTARIO=11, CHAR_LITERAL=12, STRING=13, LCURLY=14, 
+		RCURLY=15;
 	public static final int
 		RULE_program = 0;
 	public static final String[] ruleNames = {
@@ -30,8 +32,9 @@ public class DecafParser extends Parser {
 		null, null, "'{'", "'}'"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
-		null, "TK_class", "LCURLY", "RCURLY", "ID", "WS_", "SL_COMMENT", "CHAR", 
-		"STRING"
+		null, "TK_class", "ABRE_CHAVE", "FECHA_CHAVE", "ID", "ID_LETRA", "DIGITO", 
+		"INT", "FLOAT", "HEXA", "WS_", "COMENTARIO", "CHAR_LITERAL", "STRING", 
+		"LCURLY", "RCURLY"
 	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
@@ -132,9 +135,9 @@ public class DecafParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\n\13\4\2\t\2\3\2"+
+		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\21\13\4\2\t\2\3\2"+
 		"\3\2\3\2\3\2\3\2\3\2\3\2\2\2\3\2\2\2\t\2\4\3\2\2\2\4\5\7\3\2\2\5\6\7\6"+
-		"\2\2\6\7\7\4\2\2\7\b\7\5\2\2\b\t\7\2\2\3\t\3\3\2\2\2\2";
+		"\2\2\6\7\7\20\2\2\7\b\7\21\2\2\b\t\7\2\2\3\t\3\3\2\2\2\2";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

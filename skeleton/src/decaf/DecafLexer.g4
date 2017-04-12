@@ -39,17 +39,19 @@ INT: DIGITO+;
 
 FLOAT: DIGITO+ '.' DIGITO* | '.' DIGITO+;
 
-HEXA: '0x' [0-9a-fA-F];
+HEXA: '0x' [0-9a-fA-F]+;
 
 WS_ : (' ' | '\n' | '\t' | '\r')+ -> skip;
 
 COMENTARIO : '//' (~'\n')* '\n' -> skip;
 
-CHAR : '\'' (ESC|~'\'') '\'';
+CHAR_LITERAL: '\'' (ESC|~'\'') '\'';
+//STRING_LITERAL: CHAR;
+
+//CHAR : '\'' (ESC|~'\'') '\'';
 STRING : '"' (ESC|~'"')* '"';
 
-CHAR_LITERAL: '\''CHAR'\'';
-STRING_LITERAL: '"'CHAR'"';
+
 
 fragment
 ESC :  '\\' ('n'|'"');
