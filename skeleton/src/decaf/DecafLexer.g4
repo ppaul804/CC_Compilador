@@ -1,31 +1,55 @@
 lexer grammar DecafLexer;
 
 @header {
-package decaf;
+  package decaf;
 }
 
-options
-{
+options {
   language=Java;
 }
 
-tokens
-{
+tokens {
   TK_class
 }
 
-LCURLY : '{';
-RCURLY : '}';
 
-ID  :
-  ('a'..'z' | 'A'..'Z')+;
+//PROGRAMA: 'class' 'Program' ABRE_CHAVE CAMPO* METODO* FECHA_CHAVE;
+//CAMPO: ;
 
-WS_ : (' ' | '\n' ) -> skip;
+//PROGRAMA: 'class' 'Program' ABRE_CHAVE METODO* FECHA_CHAVE;
 
-SL_COMMENT : '//' (~'\n')* '\n' -> skip;
+//METODO: (TIPO | 'void') ID '(' PARAMETRO ')' ABRE_CHAVE ESTRUTURA FECHA_CHAVE;
+
+//PARAMETRO: ( (TIPO ID) | ( (TIPO ID) ',' PARAMETRO )*;
+
+//TIPO: 'int' | 'String' | 'char';
+
+//ESTRUTURA: 
+
+ABRE_CHAVE : '{';
+FECHA_CHAVE : '}';
+
+ID: ID_LETRA (ID_LETRA | DIGITO)*;
+
+ID_LETRA : 'a'..'z' | 'A'..'Z' | '_';
+
+DIGITO: '0'..'9';
+
+INT: DIGITO+;
+
+FLOAT: DIGITO+ '.' DIGITO* | '.' DIGITO+;
+
+HEXA: '0x' [0-9a-fA-F];
+
+WS_ : (' ' | '\n' | '\t' | '\r')+ -> skip;
+
+COMENTARIO : '//' (~'\n')* '\n' -> skip;
 
 CHAR : '\'' (ESC|~'\'') '\'';
 STRING : '"' (ESC|~'"')* '"';
+
+CHAR_LITERAL: '\''CHAR'\'';
+STRING_LITERAL: '"'CHAR'"';
 
 fragment
 ESC :  '\\' ('n'|'"');
