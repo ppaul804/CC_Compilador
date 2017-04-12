@@ -1,0 +1,10 @@
+TK_class=1
+LCURLY=2
+RCURLY=3
+ID=4
+WS_=5
+SL_COMMENT=6
+CHAR=7
+STRING=8
+'{'=2
+'}'=3
