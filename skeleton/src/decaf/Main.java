@@ -33,15 +33,20 @@ class Main {
 		        			{
 		        			case DecafLexer.ID:
 		        				type = " IDENTIFIER";
-		        				break;
+		        				break;						
 						case DecafLexer.CHAR_LITERAL:
 							type = " CHARLITERAL";
 							break;
 						case DecafLexer.HEXA:
 							type = " INTLITERAL";
+							break;						
+						case DecafLexer.STRING_LITERAL:
+							type = " STRINGLITERAL";
+							break;
+						case DecafLexer.INT:
+							type = " INTLITERAL";
 							break;
 						}
-		
 		        			System.out.println (token.getLine() + type + " " + text);
 		        		}
 		        		done = true;

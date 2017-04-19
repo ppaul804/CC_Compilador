@@ -29,6 +29,16 @@ tokens {
 ABRE_CHAVE : '{';
 FECHA_CHAVE : '}';
 
+ABRE_PARENTESE : '(';
+FECHA_PARENTESE : ')';
+
+ABRE_COLCHETE : '[';
+FECHA_COLCHETE : ']';
+
+OPERADORES: '+' | '-' | '*' | '/' | '%' | '=';
+COMPARADORES: '<' | '>' | '<=' | '>=' | '==' | '!=';
+CONDICIONADORES: '&&' | '||';
+
 ID: ID_LETRA (ID_LETRA | DIGITO)*;
 
 ID_LETRA : 'a'..'z' | 'A'..'Z' | '_';
@@ -45,13 +55,10 @@ WS_ : (' ' | '\n' | '\t' | '\r')+ -> skip;
 
 COMENTARIO : '//' (~'\n')* '\n' -> skip;
 
-CHAR_LITERAL: '\'' (ESC|~'\'') '\'';
-//STRING_LITERAL: CHAR;
-
-//CHAR : '\'' (ESC|~'\'') '\'';
-STRING : '"' (ESC|~'"')* '"';
-
-
+CHAR_LITERAL:  '\'' CHAR '\'';
+STRING_LITERAL: '\"' (CHAR)*? '\"';
+CHAR: (ESC | ~'\'');
+//CHAR: (ESC | .);
 
 fragment
-ESC :  '\\' ('n'|'"');
+ESC :  '\\' [btnr"\\];
