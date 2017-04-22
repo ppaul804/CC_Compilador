@@ -2,48 +2,62 @@
 Linguagens de programação são notações para se descrever computações para pessoas e para máquinas. Contudo, apesar de possuírem definições e regras de escrita, tais linguagens ainda precisam ser traduzidas de forma que possam ser executadas por um computador. Os sistemas de software que traduzem essas linguagens são chamados de compiladores. Este projeto final da disciplina visa o desenvolvimento de um projeto para construção de um compilador básico de qualquer linguagem para qualquer arquitetura de processadores.
 ## Objetivo Geral
 Compreender o funcionamento e possibilidades de um compilador.
-## Objetivos Específicos
-1. Construir um compilador para qualquer linguagem;
-2. Desenvolver um modelo formal para o compilador proposto;
-3. Organizar a execução de um projeto de software.
-## Metodologia
-### Análise léxica
-Os alunos devem se organizar em grupos e definir as regras para análise léxica a serem implementadas no compilador.
-* As regras de análise léxica devem ser representadas em uma representação formal;
-* O modelo de análise léxica não precisa ser completo; contudo, precisa estar minimamente definido para ser evoluído ao longo do semestre.
-### Análise sintática e semântica
-Os alunos devem se organizar em grupos e definir as regras para análise sintática a serem implementadas no compilador.
-* As regras de análise sintática devem ser representadas em uma representação formal;
-* O modelo de análise sintática não precisa ser completo; contudo, precisa estar minimamente definido para ser evoluído ao longo do semestre.
-### Compilador
-Entrega final do compilador. Devem estar inclusos os seguintes itens:
-* Modelo de análise léxica;
-* Modelo de análise sintática e semântica;
-* Gerador de código intermediário;
-* Código-fonte do compilador;
-* Binários executáveis;
-* Documentação mínima de utilização
-  * A documentação deve ser entregue em um arquivo de texto junto ao fonte do projeto;
-  * Devem fazer parte da documentação todos os requisitos de instalação, execução e
-compilação do programa;
-  * Também devem ser fornecidas na documentação todas as restrições do compilador, ou
-seja, para qual ambiente/linguagem ele se aplica.
-* O projeto será apresentado em um seminário curto de no máximo 15 minutos.
-### Observações de ordem geral
-* Os prazos para entrega não serão estendidos, então fiquem atentos às datas;
-* Apesar de não haver restrição de linguagem, toda escolha tecnológica deve ser justificada durante o desenvolvimento do trabalho;
-* Durante a apresentação cada grupo deve identificar a contribuição individual de cada componente no desenvolvimento do trabalho;
-* Caso não seja possível identificar qual foi a contribuição individual de cada aluno, todos terão a menção SR atribuída ao trabalho;
-* Após a apresentação será disponibilizado um espaço de 15min para perguntas do professor e dos colegas.
+## Autores e Principais Contribuidores
+* [Pedro Paul](https://github.com/ppaul804) (Construção da gramática e Documentação)
+* [Igor Túllio](https://github.com/igortullio) (Construção da gramática e Testes)
+# Sobre o Compilador
+## Instalação
+### UNIX :penguin:
+0. Instale o Java (versão 1.6 ou maior)
+```
+$ sudo dnf install java
+```
+1. Faça o download do ATNLR [versão 4 ou maior (*Usaremos como exemplo o ANTLR 4.5.3*)]
+```
+$ cd /usr/local/lib
+$ sudo curl -O http://www.antlr.org/download/antlr-4.5.3-complete.jar
+```
+Ou faça o download de uma versão mais atualizada direto do navegador no site:
+    [http://www.antlr.org/download.html](http://www.antlr.org/download.html)
+e coloque em algum lugar racional tipo `/usr/local/lib`.
 
-## Calendário
-O trabalho será realizado em etapas, todas constantes do processo de avaliação para a disciplina.
-* Análise léxica: 19/04/2017
-  * Entregar o modelo de análise léxica do compilador.
-* Análise sintática: 26/05/2017
-  * Entregar o modelo de análise sintática do compilador.
-* Compilador: 14/06/2017
-  * Entrega de todos os fontes e/ou modelos utilizados no trabalho.
-  * Apresentação de 15min sobre o projeto realizado.
+2. Adicione `antlr-4.5.3-complete.jar` a sua `CLASSPATH`:
+```
+$ export CLASSPATH=".:/usr/local/lib/antlr-4.5.3-complete.jar:$CLASSPATH"
+```
+
+3. Crie alcunhas para a ferramenta ANTLR e `TestRig`.
+```
+$ alias antlr4='java -Xmx500M -cp "/usr/local/lib/antlr-4.5.3-complete.jar:$CLASSPATH" org.antlr.v4.Tool'
+$ alias grun='java org.antlr.v4.gui.TestRig'
+```
+4. (Opcional) Testar se a instalação foi bem sucedida
+
+Ou executa o `org.antlr.v4.Tool` diretamente:
+
+```
+$ java org.antlr.v4.Tool
+ANTLR Parser Generator Version 4.5.3
+-o ___ specify output directory where all output is generated
+-lib ___ specify location of .tokens files
+...
+```
+
+ou usa a opção `-jar` no java:
+
+```
+$ java -jar /usr/local/lib/antlr-4.5.3-complete.jar
+ANTLR Parser Generator Version 4.5.3
+-o ___ specify output directory where all output is generated
+-lib ___ specify location of .tokens files
+...
+```
+
+## Execução
+## Compilação
+## Restrições
+
 ## Referências
 * [Blog do Eduardo](http://www.eduardosan.com/compiladores/)
+* [Projeto - Construção de Compiladores](https://web.archive.org/web/20170422173201/http://www.eduardosan.com/wp-content/uploads/2016/07/201602-Projeto-Compiladores.pdf)
+* [The Definitive ANTLR 4 referenc](https://pragprog.com/book/tpantlr2/the-definitive-antlr-4-reference)[e](https://web.archive.org/web/20170422181048/http://www4.di.uminho.pt/~gepl/GQE/documents/books/Pragmatic.The.Definitive.ANTLR.4.Reference.Jan.2013.pdf)
