@@ -46,6 +46,9 @@ class Main {
 						case DecafLexer.INT:
 							type = " INTLITERAL";
 							break;
+						case DecafLexer.DIGITO:
+							type = " INTLITERAL";
+							break;
 						}
 		        			System.out.println (token.getLine() + type + " " + text);
 		        		}

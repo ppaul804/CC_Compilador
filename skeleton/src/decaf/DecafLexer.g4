@@ -39,6 +39,20 @@ OPERADORES: '+' | '-' | '*' | '/' | '%' | '=';
 COMPARADORES: '<' | '>' | '<=' | '>=' | '==' | '!=';
 CONDICIONADORES: '&&' | '||';
 
+//PALAVRAS RESERVADAS
+//BOOLEAN: 'boolean';
+//BREAK: 'break';
+//CALLOUT: 'callout';
+//CLASS: 'class';
+//CONTINUE: 'continue';
+//DO: 'do';
+//ELSE: 'else';
+//FOR: 'for';
+//IF: 'if';
+//RETURN: 'return';
+//VOID: 'void';
+//WHILE: 'while';
+
 ID: ID_LETRA (ID_LETRA | DIGITO)*;
 
 ID_LETRA : 'a'..'z' | 'A'..'Z' | '_';
@@ -49,7 +63,7 @@ INT: DIGITO+;
 
 FLOAT: DIGITO+ '.' DIGITO* | '.' DIGITO+;
 
-HEXA: '0x' [0-9a-fA-F]+;
+HEXA: '0x'[0-9a-fA-F]+;
 
 WS_ : (' ' | '\n' | '\t' | '\r')+ -> skip;
 
@@ -57,8 +71,7 @@ COMENTARIO : '//' (~'\n')* '\n' -> skip;
 
 CHAR_LITERAL:  '\'' CHAR '\'';
 STRING_LITERAL: '\"' (CHAR)*? '\"';
-CHAR: (ESC | ~'\'');
-//CHAR: (ESC | .);
+CHAR: (ESC | ~['"\\]);
 
 fragment
 ESC :  '\\' [btnr"\\];
