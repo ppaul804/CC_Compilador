@@ -26,6 +26,56 @@ tokens {
 
 //ESTRUTURA: 
 
+//PALAVRAS RESERVADAS
+CLASS: 'class';
+BREAK: 'break';
+CALLOUT: 'callout';
+CONTINUE: 'continue';
+DO: 'do';
+ELSE: 'else';
+FOR: 'for';
+IF: 'if';
+RETURN: 'return';
+VOID: 'void';
+WHILE: 'while';
+TIPO: 'int' | 'boolean';
+
+INT: DIGITO+ | HEXA;
+
+BOOLEAN_LITERAL: 'true' | 'false';
+
+fragment
+HEXA: '0x'[0-9a-fA-F]+;
+
+CHAR_LITERAL:  '\'' CHAR '\'' | '\'' ESC+ '\'';
+
+STRING_LITERAL: '\"' STRING_CARS? '\"';
+
+ID: ID_LETRA (ID_LETRA | DIGITO)*;
+
+fragment
+ID_LETRA : 'a'..'z' | 'A'..'Z' | '_';
+
+fragment
+DIGITO: '0'..'9';
+
+fragment
+STRING_CARS: STRING_CAR+;
+
+fragment
+STRING_CAR: CHAR | ESC;
+
+fragment
+CHAR: ~['"\\];
+
+OPERADORES: '+' | '-' | '*' | '/' | '%' | '=';
+
+COMPARADORES: '<' | '>' | '<=' | '>=' | '==' | '!=';
+
+CONDICIONADORES: '&&' | '||';
+
+PONTOS: ',' | '.' | ';' | ':';
+
 ABRE_CHAVE : '{';
 FECHA_CHAVE : '}';
 
@@ -35,43 +85,10 @@ FECHA_PARENTESE : ')';
 ABRE_COLCHETE : '[';
 FECHA_COLCHETE : ']';
 
-OPERADORES: '+' | '-' | '*' | '/' | '%' | '=';
-COMPARADORES: '<' | '>' | '<=' | '>=' | '==' | '!=';
-CONDICIONADORES: '&&' | '||';
-
-//PALAVRAS RESERVADAS
-//BOOLEAN: 'boolean';
-//BREAK: 'break';
-//CALLOUT: 'callout';
-//CLASS: 'class';
-//CONTINUE: 'continue';
-//DO: 'do';
-//ELSE: 'else';
-//FOR: 'for';
-//IF: 'if';
-//RETURN: 'return';
-//VOID: 'void';
-//WHILE: 'while';
-
-ID: ID_LETRA (ID_LETRA | DIGITO)*;
-
-ID_LETRA : 'a'..'z' | 'A'..'Z' | '_';
-
-DIGITO: '0'..'9';
-
-INT: DIGITO+;
-
-FLOAT: DIGITO+ '.' DIGITO* | '.' DIGITO+;
-
-HEXA: '0x'[0-9a-fA-F]+;
-
-WS_ : (' ' | '\n' | '\t' | '\r')+ -> skip;
+WS_ : [ \n\t\r]+ -> skip;
 
 COMENTARIO : '//' (~'\n')* '\n' -> skip;
 
-CHAR_LITERAL:  '\'' CHAR '\'';
-STRING_LITERAL: '\"' (CHAR)*? '\"';
-CHAR: (ESC | ~['"\\]);
 
 fragment
-ESC :  '\\' [btnr"\\];
+ESC :  '\\' [btnrf"'\\];

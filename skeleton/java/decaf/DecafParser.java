@@ -19,10 +19,12 @@ public class DecafParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		TK_class=1, ABRE_CHAVE=2, FECHA_CHAVE=3, ABRE_PARENTESE=4, FECHA_PARENTESE=5, 
-		ABRE_COLCHETE=6, FECHA_COLCHETE=7, OPERADORES=8, COMPARADORES=9, CONDICIONADORES=10, 
-		ID=11, ID_LETRA=12, DIGITO=13, INT=14, FLOAT=15, HEXA=16, WS_=17, COMENTARIO=18, 
-		CHAR_LITERAL=19, STRING_LITERAL=20, CHAR=21, LCURLY=22, RCURLY=23;
+		TK_class=1, CLASS=2, BREAK=3, CALLOUT=4, CONTINUE=5, DO=6, ELSE=7, FOR=8, 
+		IF=9, RETURN=10, VOID=11, WHILE=12, TIPO=13, INT=14, BOOLEAN_LITERAL=15, 
+		CHAR_LITERAL=16, STRING_LITERAL=17, ID=18, OPERADORES=19, COMPARADORES=20, 
+		CONDICIONADORES=21, PONTOS=22, ABRE_CHAVE=23, FECHA_CHAVE=24, ABRE_PARENTESE=25, 
+		FECHA_PARENTESE=26, ABRE_COLCHETE=27, FECHA_COLCHETE=28, WS_=29, COMENTARIO=30, 
+		LCURLY=31, RCURLY=32;
 	public static final int
 		RULE_program = 0;
 	public static final String[] ruleNames = {
@@ -30,13 +32,18 @@ public class DecafParser extends Parser {
 	};
 
 	private static final String[] _LITERAL_NAMES = {
-		null, null, "'{'", "'}'", "'('", "')'", "'['", "']'"
+		null, null, "'class'", "'break'", "'callout'", "'continue'", "'do'", "'else'", 
+		"'for'", "'if'", "'return'", "'void'", "'while'", null, null, null, null, 
+		null, null, null, null, null, null, "'{'", "'}'", "'('", "')'", "'['", 
+		"']'"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
-		null, "TK_class", "ABRE_CHAVE", "FECHA_CHAVE", "ABRE_PARENTESE", "FECHA_PARENTESE", 
-		"ABRE_COLCHETE", "FECHA_COLCHETE", "OPERADORES", "COMPARADORES", "CONDICIONADORES", 
-		"ID", "ID_LETRA", "DIGITO", "INT", "FLOAT", "HEXA", "WS_", "COMENTARIO", 
-		"CHAR_LITERAL", "STRING_LITERAL", "CHAR", "LCURLY", "RCURLY"
+		null, "TK_class", "CLASS", "BREAK", "CALLOUT", "CONTINUE", "DO", "ELSE", 
+		"FOR", "IF", "RETURN", "VOID", "WHILE", "TIPO", "INT", "BOOLEAN_LITERAL", 
+		"CHAR_LITERAL", "STRING_LITERAL", "ID", "OPERADORES", "COMPARADORES", 
+		"CONDICIONADORES", "PONTOS", "ABRE_CHAVE", "FECHA_CHAVE", "ABRE_PARENTESE", 
+		"FECHA_PARENTESE", "ABRE_COLCHETE", "FECHA_COLCHETE", "WS_", "COMENTARIO", 
+		"LCURLY", "RCURLY"
 	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
@@ -137,9 +144,9 @@ public class DecafParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\31\13\4\2\t\2\3\2"+
-		"\3\2\3\2\3\2\3\2\3\2\3\2\2\2\3\2\2\2\t\2\4\3\2\2\2\4\5\7\3\2\2\5\6\7\r"+
-		"\2\2\6\7\7\30\2\2\7\b\7\31\2\2\b\t\7\2\2\3\t\3\3\2\2\2\2";
+		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\"\13\4\2\t\2\3\2"+
+		"\3\2\3\2\3\2\3\2\3\2\3\2\2\2\3\2\2\2\t\2\4\3\2\2\2\4\5\7\3\2\2\5\6\7\24"+
+		"\2\2\6\7\7!\2\2\7\b\7\"\2\2\b\t\7\2\2\3\t\3\3\2\2\2\2";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
