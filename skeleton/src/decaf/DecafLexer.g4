@@ -12,22 +12,9 @@ tokens {
   TK_class
 }
 
-
-//PROGRAMA: 'class' 'Program' ABRE_CHAVE CAMPO* METODO* FECHA_CHAVE;
-//CAMPO: ;
-
-//PROGRAMA: 'class' 'Program' ABRE_CHAVE METODO* FECHA_CHAVE;
-
-//METODO: (TIPO | 'void') ID '(' PARAMETRO ')' ABRE_CHAVE ESTRUTURA FECHA_CHAVE;
-
-//PARAMETRO: ( (TIPO ID) | ( (TIPO ID) ',' PARAMETRO )*;
-
-//TIPO: 'int' | 'String' | 'char';
-
-//ESTRUTURA: 
-
 //PALAVRAS RESERVADAS
 CLASS: 'class';
+PROGRAM: 'Program';
 BREAK: 'break';
 CALLOUT: 'callout';
 CONTINUE: 'continue';
@@ -68,13 +55,27 @@ STRING_CAR: CHAR | ESC;
 fragment
 CHAR: ~['"\\];
 
-OPERADORES: '+' | '-' | '*' | '/' | '%' | '=';
+SOMA: '+':
+
+SUBTRACAO: '-';
+
+MULTIPLICACAO: '*';
+
+DIVISAO: '/';
+
+PORCENTAGEM: '%';
+
+IGUAL: '=';
+
+EXCLAMACAO: '!';
 
 COMPARADORES: '<' | '>' | '<=' | '>=' | '==' | '!=';
 
 CONDICIONADORES: '&&' | '||';
 
-PONTOS: ',' | '.' | ';' | ':';
+PONTOS:  '.' | ';' | ':';
+
+VIRGULA: ','; 
 
 ABRE_CHAVE : '{';
 FECHA_CHAVE : '}';
