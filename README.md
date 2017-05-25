@@ -46,7 +46,7 @@ ANTLR Parser Generator Version 4.5.3
 ...
 ```
 
-ou usa a opção `-jar` no java:
+ou usa a opção `-jar` do java:
 
 ```sh
 $ java -jar /usr/local/lib/antlr-4.5.3-complete.jar
@@ -72,9 +72,30 @@ $ ant
 caso o pacote não for encontrado instale ele.
 
 3. Execute o Scanner em um arquivo de texto
+
 ```sh
-java -jar dist/Compiler.jar -target scan -debug ../scanner/ARQUIVO_DE_TEXTO
+$ java -jar dist/Compiler.jar -target scan -debug ../scanner/ARQUIVO_DE_TEXTO
 ```
+### Análise Sintática e Semântica
+Aqui será lido os caracteres do programa fonte. O analisador sintático utilizará a tabela de tokens produzidos pelo analisador léxico para criar uma árvore de sintaxe, que mostra a estrutura gramatical da sequência de tokens. A análise semântica que usa esta e a tabela de tokens para verificar a consistência semântica do programa fonte com a definição da linguagem. Esta também reúne informações sobre os tipos e as salva na árvore de sintaxe ou na tabela de símbolos, para uso subsequente durante a geração de código intermediário.
+
+1. Na pasta `CC_Compilador`, entre na pasta `skeleton`
+```sh
+$ cd skeleton/
+```
+
+2. Compilar os aquivos Java
+```sh
+$ ant
+```
+caso o pacote não for encontrado instale ele.
+
+3. Execute o Parser em um arquivo de texto que contenha o programa fonte
+
+```sh
+$ java -jar dist/Compiler.jar -target parser -debug ../parser/ARQUIVO_DE_TEXTO
+```
+
 ## Restrições
 
 ## Referências
