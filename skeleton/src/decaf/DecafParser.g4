@@ -10,7 +10,7 @@ options
   tokenVocab=DecafLexer;
 }
 
-//PROGRAM: TK_class ID LCURLY RCURLY EOF;
+//program: TK_class ID LCURLY RCURLY EOF;
 
 programa: CLASS PROGRAM ABRE_CHAVE campo* metodo* FECHA_CHAVE EOF;
 
@@ -26,9 +26,9 @@ elemento_parametro: TIPO ID;
 
 bloco: ABRE_CHAVE var_decl* estrutura* FECHA_CHAVE;
 
-var_decl: elemento_var_decl (VIRGULA elemento_var_decl)*;
+var_decl: elemento_var_decl (VIRGULA elemento_var_decl)* PONTOEVIRGULA;
 
-elemento_var_decl: TIPO ID+;
+elemento_var_decl: TIPO ID+ ;
 
 estrutura: 	localizacao ATRIBUICAO_OP expressao PONTOEVIRGULA
 		| chamada_metodo PONTOEVIRGULA
@@ -46,9 +46,10 @@ expressao: 	localizacao
 		| expressao OPERADOR_BIN expressao
 		| SUBTRACAO expressao
 		| EXCLAMACAO expressao
-		| ABRE_PARENTESE expressao FECHA_PARENTESE;
+		| ABRE_PARENTESE expressao FECHA_PARENTESE
+		| var_decl;
 
-localizacao: ID | ID ABRE_COLCHETE expressao FECHA_COLCHETE;
+localizacao: ID | ID ABRE_COLCHETE expressao FECHA_COLCHETE | literal;
 
 chamada_metodo: nome_metodo ABRE_PARENTESE elemento_chamada_metodo* FECHA_PARENTESE
 		| CALLOUT ABRE_PARENTESE STRING_LITERAL elemento_argumento_chamada FECHA_PARENTESE;
