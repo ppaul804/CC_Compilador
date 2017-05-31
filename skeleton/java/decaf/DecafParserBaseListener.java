@@ -1,4 +1,4 @@
-// Generated from /home/paul-pc/Downloads/CC_Compilador/skeleton/src/decaf/DecafParser.g4 by ANTLR 4.5.3
+// Generated from /home/uniceub/igortullio/CC_Compilador/skeleton/src/decaf/DecafParser.g4 by ANTLR 4.5.3
 
 package decaf;
 
@@ -114,18 +114,6 @@ public class DecafParserBaseListener implements DecafParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterElemento_var_decl(DecafParser.Elemento_var_declContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitElemento_var_decl(DecafParser.Elemento_var_declContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterEstrutura(DecafParser.EstruturaContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -198,6 +186,18 @@ public class DecafParserBaseListener implements DecafParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterElemento_callout(DecafParser.Elemento_calloutContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitElemento_callout(DecafParser.Elemento_calloutContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterElemento_chamada_metodo(DecafParser.Elemento_chamada_metodoContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -205,18 +205,6 @@ public class DecafParserBaseListener implements DecafParserListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitElemento_chamada_metodo(DecafParser.Elemento_chamada_metodoContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterNome_metodo(DecafParser.Nome_metodoContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitNome_metodo(DecafParser.Nome_metodoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

@@ -55,47 +55,17 @@ STRING_CAR: CHAR | ESC;
 fragment
 CHAR: ~['"\\];
 
-OPERADOR_BIN: ARITH_OP | REL_OP | EQ_OP | COND_OP;
-
-ARITH_OP: SOMA | SUBTRACAO | MULTIPLICACAO | DIVISAO | PORCENTAGEM;
-
-REL_OP: COMPARADORES;
-
-EQ_OP: IGUALDADE | DIFERENCA;
-
-COND_OP: ECONDICIONAL | OUCONDICIONAL;
-
-ATRIBUICAO_OP: IGUAL | MAIORIGUAL | MENORIGUAL;
-
-PONTOEVIRGULA: ';';
-
-SOMA: '+';
-
-SUBTRACAO: '-';
-
-MULTIPLICACAO: '*';
-
-DIVISAO: '/';
-
-PORCENTAGEM: '%';
+EXCLAMACAO: '!';
 
 IGUAL: '=';
 
-MAIORIGUAL: '+=';
+ATRIBUICAO_OP: '+=' | '-=' | '*=' | '/=';
 
-MENORIGUAL: '-=';
+SUBTRACAO: '-';
 
-EXCLAMACAO: '!';
+OPERADOR_BIN: '+' | '*' | '/' | '%' | '<' | '>' | '>=' | '<=' | '!=' | '==' | '&&' | '||';
 
-COMPARADORES: '<' | '>' | '<=' | '>=';
-
-IGUALDADE: '==';
-
-DIFERENCA: '!=';
-
-ECONDICIONAL: '&&';
-
-OUCONDICIONAL:'||';
+PONTOEVIRGULA: ';';
 
 PONTOS:  '.' | ';' | ':';
 

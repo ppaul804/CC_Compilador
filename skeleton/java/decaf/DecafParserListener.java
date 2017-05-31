@@ -1,4 +1,4 @@
-// Generated from /home/paul-pc/Downloads/CC_Compilador/skeleton/src/decaf/DecafParser.g4 by ANTLR 4.5.3
+// Generated from /home/uniceub/igortullio/CC_Compilador/skeleton/src/decaf/DecafParser.g4 by ANTLR 4.5.3
 
 package decaf;
 
@@ -90,16 +90,6 @@ public interface DecafParserListener extends ParseTreeListener {
 	 */
 	void exitVar_decl(DecafParser.Var_declContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link DecafParser#elemento_var_decl}.
-	 * @param ctx the parse tree
-	 */
-	void enterElemento_var_decl(DecafParser.Elemento_var_declContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link DecafParser#elemento_var_decl}.
-	 * @param ctx the parse tree
-	 */
-	void exitElemento_var_decl(DecafParser.Elemento_var_declContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link DecafParser#estrutura}.
 	 * @param ctx the parse tree
 	 */
@@ -160,6 +150,16 @@ public interface DecafParserListener extends ParseTreeListener {
 	 */
 	void exitArgumento_chamada(DecafParser.Argumento_chamadaContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link DecafParser#elemento_callout}.
+	 * @param ctx the parse tree
+	 */
+	void enterElemento_callout(DecafParser.Elemento_calloutContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DecafParser#elemento_callout}.
+	 * @param ctx the parse tree
+	 */
+	void exitElemento_callout(DecafParser.Elemento_calloutContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link DecafParser#elemento_chamada_metodo}.
 	 * @param ctx the parse tree
 	 */
@@ -169,16 +169,6 @@ public interface DecafParserListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitElemento_chamada_metodo(DecafParser.Elemento_chamada_metodoContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link DecafParser#nome_metodo}.
-	 * @param ctx the parse tree
-	 */
-	void enterNome_metodo(DecafParser.Nome_metodoContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link DecafParser#nome_metodo}.
-	 * @param ctx the parse tree
-	 */
-	void exitNome_metodo(DecafParser.Nome_metodoContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link DecafParser#literal}.
 	 * @param ctx the parse tree
