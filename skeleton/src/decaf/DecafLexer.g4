@@ -63,7 +63,11 @@ ATRIBUICAO_OP: '+=' | '-=' | '*=' | '/=';
 
 SUBTRACAO: '-';
 
-OPERADOR_BIN: '+' | '*' | '/' | '%' | '<' | '>' | '>=' | '<=' | '!=' | '==' | '&&' | '||';
+OPERADOR_BIN: OPERADOR_BASICO | OPERADOR_RELACIONAL | '%' | '<' | '>' | '>=' | '<=' | '!=' | '==';
+
+OPERADOR_BASICO: '+' | '*' | '/' | SUBTRACAO;
+
+OPERADOR_RELACIONAL: '&&' | '||';
 
 PONTOEVIRGULA: ';';
 
