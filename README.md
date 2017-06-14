@@ -79,6 +79,7 @@ $ java -jar dist/Compiler.jar -target scan -debug ../scanner/ARQUIVO_DE_TEXTO
 ### Análise Sintática e Semântica
 Aqui será lido os caracteres do programa fonte. O analisador sintático utilizará a tabela de tokens produzidos pelo analisador léxico para criar uma árvore de sintaxe, que mostra a estrutura gramatical da sequência de tokens. A análise semântica que usa esta e a tabela de tokens para verificar a consistência semântica do programa fonte com a definição da linguagem. Esta também reúne informações sobre os tipos e as salva na árvore de sintaxe ou na tabela de símbolos, para uso subsequente durante a geração de código intermediário.
 
+#### Para testes da análise sintática:
 1. Na pasta `CC_Compilador`, entre na pasta `skeleton`
 ```sh
 $ cd skeleton/
@@ -96,7 +97,26 @@ caso o pacote não for encontrado instale ele.
 $ java -jar dist/Compiler.jar -target parser -debug ../parser/ARQUIVO_DE_TEXTO
 ```
 
+#### Para a visualização da AST (Abstract Syntax Tree)
+1. Na pasta `CC_Compilador`, entre na pasta `skeleton`
+```sh
+$ cd skeleton/
+```
+
+2. Compilar os aquivos Java
+```sh
+$ ant
+```
+caso o pacote não for encontrado instale ele.
+
+3. Execute o Inter em um arquivo de texto que contenha o programa fonte
+
+```sh
+$ java -jar dist/Compiler.jar -target inter ../parser/ARQUIVO_DE_TEXTO
+```
+
 ## Restrições
+A Construção da gramática ficou restrita as liguagem ANTLR e Java. Todos os testes foram feitos em ambiente UNIX, porem poderiam ser feitos no Windows desde que o java, ant e o ANTLR fossem configurados para este.
 
 ## Referências
 * [Blog do Eduardo](http://www.eduardosan.com/compiladores/)
